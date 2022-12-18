@@ -1,8 +1,6 @@
 <?php
 namespace QuickBooksOnline\API\Diagnostics;
 
-use QuickBooksOnline\API\Core\CoreConstants;
-
 /**
  * This file contains an interface for Logging.
  */
@@ -18,10 +16,6 @@ class LoggerBase
      */
     public function Log($idsTraceLevel, $messageToWrite)
     {
-        $fileToWrite = CoreConstants::DEFAULT_LOGGINGLOCATION . '/executionlog.txt';
-        if(file_exists($fileToWrite) && is_writable($fileToWrite))
-        {
-           file_put_contents($fileToWrite, $messageToWrite."\n", FILE_APPEND);
-        }
+        // Disable system log
     }
 }
